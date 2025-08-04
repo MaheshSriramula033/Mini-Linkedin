@@ -5,7 +5,6 @@ require('dotenv').config();
 
 const authRoutes=require('./routes/auth');
 const postRoutes=require('./routes/posts');
-const userRoutes=require('./routes/users');
 
 
 const app=express();
@@ -14,7 +13,6 @@ app.use(express.json());
 
 app.use('/api/auth',authRoutes);
 app.use('/api/posts',postRoutes);
-app.use('/api/users', userRoutes);
 
 
 mongoose.connect(process.env.MONGO_URL)
