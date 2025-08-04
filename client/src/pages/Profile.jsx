@@ -7,7 +7,8 @@ const Profile = () => {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/auth/profile/${id}`)
+    const API = import.meta.env.VITE_API_URL;
+    axios.get(`${API}/api/auth/profile/${id}`)
       .then((res) => setProfile(res.data))
       .catch(() => alert('Failed to load profile'));
   }, [id]);

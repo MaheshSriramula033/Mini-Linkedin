@@ -6,7 +6,8 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
 
 const fetchPosts = () => {
-  axios.get('http://localhost:5000/api/posts')
+  const API = import.meta.env.VITE_API_URL;
+  axios.get(`${API}/api/posts`)
     .then((res) => {
       const data = res.data;
       if (Array.isArray(data)) {
