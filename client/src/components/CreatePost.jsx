@@ -10,7 +10,7 @@ const CreatePost = ({ onPostCreated }) => {
     if (!token) return alert('You must be logged in to post');
 
     try {
-        const API = import.meta.env.VITE_API_URL;
+      const API = import.meta.env.VITE_API_URL;
       await axios.post(
         `${API}/api/posts`,
         { content },
